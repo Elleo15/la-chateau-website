@@ -462,6 +462,16 @@ function setLang(lang) {
     }
   });
   document.documentElement.lang = lang;
+      const guestOptions = {
+  az: ['1 nəfər', '2 nəfər', '3 nəfər', '4 nəfər', '5 nəfər', '6 nəfər', '7 nəfər', '8+ nəfər'],
+  ru: ['1 человек', '2 человека', '3 человека', '4 человека', '5 человек', '6 человек', '7 человек', '8+ человек'],
+  en: ['1 person', '2 people', '3 people', '4 people', '5 people', '6 people', '7 people', '8+ people']
+};
+
+const guestSelect = document.getElementById('guests');
+guestOptions[lang].forEach((text, i) => {
+  guestSelect.options[i].text = text;
+});
 
 // Set today as min date for reservation
 const today = new Date().toISOString().split("T")[0];
