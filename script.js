@@ -451,6 +451,30 @@ function setLang(lang) {
     }
   });
   document.documentElement.lang = lang;
+   function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll(".lang-btn").forEach((b) => {
+    b.classList.toggle("active", b.textContent.toLowerCase() === lang);
+  });
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (i18n[lang] && i18n[lang][key]) {
+      el.textContent = i18n[lang][key];
+    }
+  });
+  document.documentElement.lang = lang;
+
+  const placeholders = {
+    az: { fname: 'Adınız', lname: 'Soyadınız', phone: '+994 XX XXX XX XX', note: 'Xüsusi istəkləriniz, məkan seçimi...' },
+    ru: { fname: 'Ваше имя', lname: 'Фамилия', phone: '+994 XX XXX XX XX', note: 'Особые пожелания, выбор зала...' },
+    en: { fname: 'Your name', lname: 'Last name', phone: '+994 XX XXX XX XX', note: 'Special requests, room choice...' }
+  };
+
+  document.getElementById('fname').placeholder = placeholders[lang].fname;
+  document.getElementById('lname').placeholder = placeholders[lang].lname;
+  document.getElementById('phone').placeholder = placeholders[lang].phone;
+  document.getElementById('rnote').placeholder = placeholders[lang].note;
+}
 }
 
 // Set today as min date for reservation
