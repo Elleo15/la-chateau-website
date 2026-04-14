@@ -1,0 +1,2018 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Château Restaurant</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-prev" onclick="lbPrev()">‹</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <button class="lightbox-next" onclick="lbNext()">›</button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" onclick="toggleMobile()">✕</button>
+      <a href="#about" onclick="toggleMobile()" data-i18n="nav_about"
+        >Haqqımızda</a
+      >
+      <a href="#spaces" onclick="toggleMobile()" data-i18n="nav_spaces"
+        >Məkanlar</a
+      >
+      <a href="#menu" onclick="toggleMobile()" data-i18n="nav_menu">Menyu</a>
+      <a href="#reservation" onclick="toggleMobile()" data-i18n="nav_reserve"
+        >Rezervasiya</a
+      >
+      <a href="#contact" onclick="toggleMobile()" data-i18n="nav_contact"
+        >Əlaqə</a
+      >
+    </div>
+
+    <!-- NAV -->
+    <nav id="mainNav">
+      <a class="nav-logo" href="#hero">
+        <img src="assets/images/logo.jpg" alt="La Château" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav_about">Haqqımızda</a></li>
+        <li><a href="#spaces" data-i18n="nav_spaces">Məkanlar</a></li>
+        <li><a href="#menu" data-i18n="nav_menu">Menyu</a></li>
+        <li><a href="#reservation" data-i18n="nav_reserve">Rezervasiya</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Əlaqə</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('az')">AZ</button>
+          <button class="lang-btn" onclick="setLang('ru')">RU</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#reservation" class="nav-reserve-btn" data-i18n="nav_reserve"
+          >Rezervasiya</a
+        >
+        <button class="nav-burger" onclick="toggleMobile()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="assets/videos/main-video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag" data-i18n="hero_tag">
+          Novxanı, Azərbaycan — Xəzər Sahili
+        </p>
+        <h1 class="hero-title">La <em>Château</em></h1>
+        <p class="hero-subtitle" data-i18n="hero_sub">
+          Restaurant & Private Rooms
+        </p>
+        <div class="hero-actions">
+          <a href="#reservation" class="btn-gold" data-i18n="hero_btn1"
+            >Masa Sifariş Et</a
+          >
+          <a href="#spaces" class="btn-outline" data-i18n="hero_btn2"
+            >Məkanları Kəşf Et</a
+          >
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span data-i18n="scroll">Aşağı Sürüşdür</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-img-wrap reveal-left">
+        <img src="assets/images/photo.jpg" alt="La Château" />
+        <div class="about-img-accent"></div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="about_tag"
+            >Bizim haqqımızda</span
+          >
+          <h2 class="section-title" data-i18n="about_title">
+            Hər an <em>xatirəyə</em><br />çevrilsin
+          </h2>
+          <div class="section-divider"></div>
+        </div>
+        <p class="about-body" data-i18n="about_p1">
+          La Château — Xəzər dənizinin sahilində, Novxanıda yerləşən premium
+          restoran kompleksidir. Milli və dünya mətbəxinin ən gözəl nümunələrini
+          bir çatı altında birləşdiririk.
+        </p>
+        <p class="about-body" data-i18n="about_p2">
+          Özəl VIP kabinlər, sinema zalı, açıq dəniz kənarı məkanı — hər detal
+          sizin üçün düşünülmüş, hər an unutulmaz olmaq üçün hazırlanmışdır.
+        </p>
+        <div class="about-stats">
+          <div>
+            <span class="stat-num">4</span>
+            <span class="stat-label" data-i18n="stat1">Unikal Məkan</span>
+          </div>
+          <div>
+            <span class="stat-num">180+</span>
+            <span class="stat-label" data-i18n="stat2">Menyu Mövqeyi</span>
+          </div>
+          <div>
+            <span class="stat-num">∞</span>
+            <span class="stat-label" data-i18n="stat3">Xatirə</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACES -->
+    <section id="spaces">
+      <div class="spaces-header reveal">
+        <span class="section-tag" data-i18n="spaces_tag">Məkanlarımız</span>
+        <h2 class="section-title" data-i18n="spaces_title">
+          Hər məkan <em>ayrı bir dünya</em>
+        </h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" data-i18n="spaces_desc">
+          Əsas zal, VIP kabinlər, sinema zalı və Xəzər sahilindəki açıq məkan —
+          seçim sizindir.
+        </p>
+      </div>
+
+      <!-- MAIN HALL -->
+      <div class="space-section reveal">
+        <div class="space-video-wrap">
+          <video class="space-video" autoplay muted loop playsinline>
+            <source src="assets/videos/main-zal.mp4" type="video/mp4" />
+          </video>
+          <div class="space-video-overlay">
+            <div class="space-info">
+              <span class="space-num">01</span>
+              <span class="space-tag" data-i18n="main_tag"
+                >Əsas Restoran Zalı</span
+              >
+              <h3 class="space-title" data-i18n="main_title">
+                Əsas <em>Zal</em>
+              </h3>
+              <p class="space-desc" data-i18n="main_desc">
+                Edison lampalar, geniş panoram pəncərələr və Xəzər mənzərəsi.
+                Böyük şirkətlər üçün ideal.
+              </p>
+              <button
+                class="space-gallery-btn"
+                onclick="openGallery('main')"
+                data-i18n="view_gallery"
+              >
+                Qalereya →
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="space-thumbs" id="thumbs-main">
+          <div class="space-thumb" onclick="openGallery('main', 0)">
+            <img src="assets/images/zal-main.jpg" alt="Əsas Zal" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('main', 1)">
+            <img src="assets/images/zal-main1.jpg" alt="Əsas Zal" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('main', 2)">
+            <img src="assets/images/zal-1.jpg" alt="Əsas Zal" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('main', 3)">
+            <img src="assets/images/zal-table.jpg" alt="Əsas Zal" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIP ROOMS -->
+      <div class="space-section reveal">
+        <div class="space-video-wrap">
+          <video class="space-video" autoplay muted loop playsinline>
+            <source src="assets/videos/vip-rooms.mp4" type="video/mp4" />
+          </video>
+          <div class="space-video-overlay right">
+            <div class="space-info" style="text-align: right">
+              <span class="space-num">02</span>
+              <span class="space-tag" data-i18n="vip_tag">Özəl Məkanlar</span>
+              <h3 class="space-title" data-i18n="vip_title">
+                VIP <em>Kabinlər</em>
+              </h3>
+              <p class="space-desc" data-i18n="vip_desc">
+                Hər otaq öz xarakteri ilə — mavi, qırmızı, yaşıl, qızılı. Xüsusi
+                anlar üçün xüsusi məkanlar.
+              </p>
+              <button
+                class="space-gallery-btn"
+                onclick="openGallery('vip')"
+                data-i18n="view_gallery"
+              >
+                Qalereya →
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="space-thumbs" id="thumbs-vip">
+          <div class="space-thumb" onclick="openGallery('vip', 0)">
+            <img src="assets/images/cinema-1.jpg" alt="VIP" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('vip', 1)">
+            <img src="assets/images/cinema-2.jpg" alt="VIP" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('vip', 2)">
+            <img src="assets/images/cinema-3.jpg" alt="VIP" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('vip', 3)">
+            <img src="assets/images/vipcab.jpg" alt="VIP" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CINEMA HALL -->
+      <div class="space-section reveal">
+        <div class="space-video-wrap">
+          <video class="space-video" autoplay muted loop playsinline>
+            <source src="assets/videos/cinema-hall.mp4" type="video/mp4" />
+          </video>
+          <div class="space-video-overlay">
+            <div class="space-info">
+              <span class="space-num">03</span>
+              <span class="space-tag" data-i18n="cinema_tag"
+                >Sinema & Yemək</span
+              >
+              <h3 class="space-title" data-i18n="cinema_title">
+                Cinema <em>Zalı</em>
+              </h3>
+              <p class="space-desc" data-i18n="cinema_desc">
+                Premium recliner oturacaqlar, böyük ekran, mükəmməl səs sistemi.
+                Film izləyərkən dadlı yeyin.
+              </p>
+              <button
+                class="space-gallery-btn"
+                onclick="openGallery('cinema')"
+                data-i18n="view_gallery"
+              >
+                Qalereya →
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="space-thumbs" id="thumbs-cinema">
+          <div class="space-thumb" onclick="openGallery('cinema', 0)">
+            <img src="assets/images/cinema-place1.jpg" alt="Cinema" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('cinema', 1)">
+            <img src="assets/images/cinema-place2.jpg" alt="Cinema" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('cinema', 2)">
+            <img src="assets/images/cinema-hall.jpg" alt="Cinema" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('cinema', 3)">
+            <img src="assets/images/cinema-hall1l.jpg" alt="Cinema" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEASIDE -->
+      <div class="space-section reveal">
+        <div class="space-video-wrap">
+          <video class="space-video" autoplay muted loop playsinline>
+            <source src="assets/videos/seaside-video.mp4" type="video/mp4" />
+          </video>
+          <div class="space-video-overlay right">
+            <div class="space-info" style="text-align: right">
+              <span class="space-num">04</span>
+              <span class="space-tag" data-i18n="sea_tag">Xəzər Sahili</span>
+              <h3 class="space-title" data-i18n="sea_title">
+                Dəniz <em>Kənarı</em>
+              </h3>
+              <p class="space-desc" data-i18n="sea_desc">
+                Ağ vitray çərçivələr, qırmızı güllər, dəniz küləyi. Xəzərin
+                üzərindən günbatan mənzərəsi.
+              </p>
+              <button
+                class="space-gallery-btn"
+                onclick="openGallery('sea')"
+                data-i18n="view_gallery"
+              >
+                Qalereya →
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="space-thumbs" id="thumbs-sea">
+          <div class="space-thumb" onclick="openGallery('sea', 0)">
+            <img src="assets/images/deniz-kenar.jpg" alt="Dəniz Kənarı" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('sea', 1)">
+            <img src="assets/images/deniz-kenar1.jpg" alt="Dəniz Kənarı" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('sea', 2)">
+            <img src="assets/images/meal-fish.jpg" alt="Dəniz Kənarı" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+          <div class="space-thumb" onclick="openGallery('sea', 3)">
+            <img src="assets/images/drink-melon.jpg" alt="Dəniz Kənarı" />
+            <div class="space-thumb-overlay"><span>+</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="menu_tag">Bizim Menyu</span>
+        <h2 class="section-title" data-i18n="menu_title">
+          Dadların <em>simfoniyası</em>
+        </h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" data-i18n="menu_desc">
+          Milli mətbəxdən dünya mətbəxinə, Xəzər balıqlarından premium
+          steaklərə.
+        </p>
+      </div>
+
+      <div class="menu-tabs reveal">
+        <button
+          class="menu-tab active"
+          onclick="showTab('breakfast')"
+          data-i18n="tab_breakfast"
+        >
+          Səhər Yeməyi
+        </button>
+        <button class="menu-tab" onclick="showTab('cold')" data-i18n="tab_cold">
+          Soyuq Qəlyanaltı
+        </button>
+        <button class="menu-tab" onclick="showTab('hot')" data-i18n="tab_hot">
+          İsti Qəlyanaltı
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('soups')"
+          data-i18n="tab_soups"
+        >
+          Şorbalar
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('salads')"
+          data-i18n="tab_salads"
+        >
+          Salatlar
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('national')"
+          data-i18n="tab_national"
+        >
+          Milli Mətbəx
+        </button>
+        <button class="menu-tab" onclick="showTab('chef')" data-i18n="tab_chef">
+          Şef Menyu
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('world')"
+          data-i18n="tab_world"
+        >
+          Dünya Mətbəxi
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('steak')"
+          data-i18n="tab_steak"
+        >
+          Steak
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('seafood')"
+          data-i18n="tab_seafood"
+        >
+          Dəniz Məhsulları
+        </button>
+        <button class="menu-tab" onclick="showTab('bbq')" data-i18n="tab_bbq">
+          Mangal Kabablar
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('pizza')"
+          data-i18n="tab_pizza"
+        >
+          Pizza
+        </button>
+        <button
+          class="menu-tab"
+          onclick="showTab('drinks')"
+          data-i18n="tab_drinks"
+        >
+          İçkilər
+        </button>
+      </div>
+
+      <!-- BREAKFAST -->
+      <div class="menu-panel active" id="panel-breakfast">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Set (2 nəfərlik)</span
+              ><span class="menu-item-price">30 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Ağ pendir, hellim, kaşar, burqu, şor, süzmə, çedar, kərə yağı,
+              qaymaq, bal, zeytun, kolbasa, pomidor yumurta, sucuklu yumurta,
+              çay
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Set (3 nəfərlik)</span
+              ><span class="menu-item-price">40 ₼</span>
+            </div>
+            <p class="menu-item-desc">+ Kükü əlavə olunur</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Set (4 nəfərlik)</span
+              ><span class="menu-item-price">50 ₼</span>
+            </div>
+            <p class="menu-item-desc">+ Göz yumurta əlavə olunur</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Set (5 nəfərlik)</span
+              ><span class="menu-item-price">60 ₼</span>
+            </div>
+            <p class="menu-item-desc">+ Sosisli yumurta əlavə olunur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLD -->
+      <div class="menu-panel" id="panel-cold">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Şəmkir Tərəvəzi</span
+              ><span class="menu-item-price">7 ₼</span>
+            </div>
+            <p class="menu-item-desc">Pomidor, xiyar</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Turşu Assorti</span
+              ><span class="menu-item-price">6 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Alça, gavalı, pomidor, göy xiyar, ağ xiyar, bibər, çeri pomidor
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Ət Assorti</span
+              ><span class="menu-item-price">12 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Dana dili, salami, hisə verilmiş hindi, basdırma, hisə verilmiş
+              toyuq, zeytun
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Pendir Assorti</span
+              ><span class="menu-item-price">6 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Ağ pendir, çedar, yantar, yumru, motal, saçaq, burqu, qoz, quru
+              meyvələr
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Zeytun Çeşidi</span
+              ><span class="menu-item-price">3 ₼</span>
+            </div>
+            <p class="menu-item-desc">Qara zeytun, yaşıl zeytun, oregano</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Badımcan Ruleti</span
+              ><span class="menu-item-price">5 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Badımcan, qoz, mayonez, xama, holland pendiri, sarımsaq
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Haydari</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">Süzmə, süyüd, sarımsaq, nehrə yağı</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Acılı Əzmə</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Pomidor, soğan, acı bibər, zeytun yağı, cəfəri
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Badımcan Əzməsi</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">Badımcan, sarımsaq, xama</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOT -->
+      <div class="menu-panel" id="panel-hot">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Blinçik ətlə (1 əd)</span
+              ><span class="menu-item-price">1.50 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Blinçik xəmiri, mal əti, un, yumurta, panko
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Spring Roll</span
+              ><span class="menu-item-price">7 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              İncə xəmir, rəngli bibər, kök, qırmızı kələm, küncüt yağı, kokteyl
+              sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Acılı Toyuq Qanadı (6 əd)</span
+              ><span class="menu-item-price">9 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq qanadı, asiya üsulu acılı sous, küncüt, limon
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Nuggets (8 əd)</span
+              ><span class="menu-item-price">8 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Nuggets toyuq, kartof fri, kətçup, sweet chili sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Julienne Toyuq</span
+              ><span class="menu-item-price">8 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq filé, göbələk, süd, qaymaq, mozarella pendiri
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Soğan Halqaları (6 əd)</span
+              ><span class="menu-item-price">7 ₼</span>
+            </div>
+            <p class="menu-item-desc">Soğan halqası, kartof fri, kətçup</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUPS -->
+      <div class="menu-panel" id="panel-soups">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Dovğa</span
+              ><span class="menu-item-price">3 ₼</span>
+            </div>
+            <p class="menu-item-desc">Göyərti, düyü, qatıq</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Mərcimək Şorbası</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">Mərcimək qırmızı, kök, bibər</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Toyuq Şorbası</span
+              ><span class="menu-item-price">5 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq çolpa, kartof, bibər, kök, soğan, düyü
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Pomidor Şorbası</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">Pomidor, kök, kərəviz, soğan, sarımsaq</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Göbələk Şorbası</span
+              ><span class="menu-item-price">4 ₼</span>
+            </div>
+            <p class="menu-item-desc">Göbələk, soğan, qaymaq</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Düşbərə</span
+              ><span class="menu-item-price">5 ₼</span>
+            </div>
+            <p class="menu-item-desc">Ət, soğan, göyərti</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALADS -->
+      <div class="menu-panel" id="panel-salads">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Kənd Salatı</span
+              ><span class="menu-item-price">5 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Pomidor, xiyar, göyərti, zeytun yağı, limon, ağ pendir
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Xırt-Xırt Badımcan Salatı</span
+              ><span class="menu-item-price">8 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Badımcan, zirə pomidoru, lollo rosso, xüsusi sous, küncüt
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Marsel Salatı</span
+              ><span class="menu-item-price">14 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Tuna, şirin qarğıdalı, qırmızı soğan, rəngli bibər, qara zeytun,
+              bildirçin yumurtası
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Mexico Salatı</span
+              ><span class="menu-item-price">13 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, qırmızı lobya, rəngli bibər, çeri pomidor, mix salat,
+              burrito sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Avocado Hellim Salatı</span
+              ><span class="menu-item-price">12 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Avocado, mix salat, çeri pomidor, xiyar, şirin qarğıdalı, hellim
+              pendiri, küncüt
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Sezar (Toyuqlu)</span
+              ><span class="menu-item-price">10 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              İceberg, suxarı, toyuq filé, çeri pomidor, sezar sousu, parmesan
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Sezar (Krevetkalı)</span
+              ><span class="menu-item-price">13 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              İceberg, suxarı, krevetka, çeri pomidor, sezar sousu, parmesan
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Salmon Sitrus Salatı</span
+              ><span class="menu-item-price">16 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Salmon hisə verilmiş, avocado, portağal, mix salat, nori, sitrus
+              sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Şərq Salatı</span
+              ><span class="menu-item-price">9 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Nar, cəfəri, pomidor, xiyar, zeytun yağı, narşərab, qırmızı soğan,
+              keçi pendiri
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NATIONAL -->
+      <div class="menu-panel" id="panel-national">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Nərə Balığı Sac</span
+              ><span class="menu-item-price">70 ₼</span>
+            </div>
+            <p class="menu-item-desc">Asotrin, soğan, nar, tərəvəzlər</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Can Əti Sac</span
+              ><span class="menu-item-price">32 ₼</span>
+            </div>
+            <p class="menu-item-desc">Can əti, soğan, göbələk, tərəvəzlər</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Quzu Sac</span
+              ><span class="menu-item-price">28 ₼</span>
+            </div>
+            <p class="menu-item-desc">Quzu əti, soğan, göbələk, tərəvəzlər</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Yarpaq Dolması</span
+              ><span class="menu-item-price">9 ₼</span>
+            </div>
+            <p class="menu-item-desc">Dana əti, üzüm yarpağı, qatıq</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Khan Sacı</span
+              ><span class="menu-item-price">40 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu budu, soğan, göbələk, kartof, badımcan, pomidor, rəngli bibər
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Şah Plov (8 nəfərlik)</span
+              ><span class="menu-item-price">50 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Düyü, quzu əti, soğan, şabalıd, meyva qurular, lavaş, zəfəran
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Övrişrə (4 nəfərlik)</span
+              ><span class="menu-item-price">40 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu əti, soğan, rəngli bibər, zoğal turşusu
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Qutab (Ət / Pendir / Göyərti)</span
+              ><span class="menu-item-price">1 ₼</span>
+            </div>
+            <p class="menu-item-desc">1 ədəd. Qutab Seti 45 ₼ — 20 ədəd</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Tabaka</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">Kənd çolpası, kartof qızartması</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHEF -->
+      <div class="menu-panel" id="panel-chef">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Chef Special Steak</span
+              ><span class="menu-item-price">25 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, göbələk, qırmızı soğan, qoz, badımcan, xüsusi sous,
+              rukola
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">The Chateau Pendirli</span
+              ><span class="menu-item-price">26 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu əti, cheddar pendiri, parmesan, kartof püre, qaymaq
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">The Chateau Turşulu</span
+              ><span class="menu-item-price">26 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu əti, zirinc, şabalıd püre, nar əzməsi
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Khan Sacı</span
+              ><span class="menu-item-price">40 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu budu, soğan, göbələk, kartof, badımcan, pomidor, rəngli bibər
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Taxta Üstü</span
+              ><span class="menu-item-price">26 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, göbələk, rəngli bibər, qaymaq, mozarella pendiri,
+              coleslaw salatı
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORLD -->
+      <div class="menu-panel" id="panel-world">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Cordon Bleu</span
+              ><span class="menu-item-price">18 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq filé, hindi hisə verilmiş, emmental pendiri, çeri pomidor,
+              bechamel sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">French Fricassee</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq əti, soğan, göbələk, qaymaq, konyak, sarımsaq, kartof püre
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Risotto Can Ətli</span
+              ><span class="menu-item-price">20 ₼</span>
+            </div>
+            <p class="menu-item-desc">Risotto düyüsü, can əti, qaymaq</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Lasagna</span
+              ><span class="menu-item-price">15 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Lazanya, beşamel sousu, dana əti, soğan, sarımsaq, pomidor,
+              mozzarella
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Spagetti Bolognese</span
+              ><span class="menu-item-price">13 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Spagetti, dana əti, soğan, sarımsaq, kök, çeri pomidor, parmesan
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Noodle Krevetka</span
+              ><span class="menu-item-price">19 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Noodle, krevetka, rəngli bibər, qırmızı kələm, kök, soya sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Teriyaki Toyuqlu</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Toyuq filé, düyü, şirin qarğıdalı, soya sous, teryaki sous, küncüt
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEAK -->
+      <div class="menu-panel" id="panel-steak">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Cafe de Paris</span
+              ><span class="menu-item-price">24 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, kənd kartofu, cafe de Paris sous, çeri pomidor, qovrulmuş
+              fındıq
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Medalion</span
+              ><span class="menu-item-price">22 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, badımcan, pomidor, göbələk, rəngli bibər, gravy sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Rib-Eye</span
+              ><span class="menu-item-price">32 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Dana bel, badımcan, pomidor, göbələk, rəngli bibər, gravy sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Salmon</span
+              ><span class="menu-item-price">35 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Salmon balığı, limon, citrus sous, asparagus, fennel
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Lamb Rock Frenched</span
+              ><span class="menu-item-price">28 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Quzu qabırğa, pomidor, asparagus, püstə, zəfəran sous
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Chateaubriand (1 kq)</span
+              ><span class="menu-item-price">100 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, qırmızı şərab, qarışıq tərəvəzlər
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEAFOOD -->
+      <div class="menu-panel" id="panel-seafood">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Qara Midye Qaymaqlı</span
+              ><span class="menu-item-price">30 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Qara midye, ağ şərab, qırmızı soğan, sarımsaq, qaymaq, lime,
+              zəncəfil
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Krevetka Turşa-Şirin Sousla</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Krevetka, sweet chili sous, shiracha, çeri pomidor, yaşıl soğan,
+              limon
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Kalmar Qızartma</span
+              ><span class="menu-item-price">12 ₼</span>
+            </div>
+            <p class="menu-item-desc">Kalmar, limon, kokteyl sous</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Dorado File</span
+              ><span class="menu-item-price">20 ₼</span>
+            </div>
+            <p class="menu-item-desc">Dorado balığı, nar şərab, limon</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Farel Qızartma</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">Farel balığı, nar şərab, limon</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Nərə Balığı Qızartma</span
+              ><span class="menu-item-price">30 ₼</span>
+            </div>
+            <p class="menu-item-desc">Nərə balığı, limon, narşərab</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Nərə Balığı Nar Qovurma</span
+              ><span class="menu-item-price">32 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Nərə balığı, soğan, nar, limon, narşərab
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BBQ -->
+      <div class="menu-panel" id="panel-bbq">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Tikə Kabab (200 qr)</span
+              ><span class="menu-item-price">10 ₼</span>
+            </div>
+            <p class="menu-item-desc">Qarışıq quzu tikələri</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Lülə Kabab (200 qr)</span
+              ><span class="menu-item-price">10 ₼</span>
+            </div>
+            <p class="menu-item-desc">Döyülmüş quzu əti, quyruq, ədviyyatlar</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Antrikot (200 qr)</span
+              ><span class="menu-item-price">11 ₼</span>
+            </div>
+            <p class="menu-item-desc">Quzu qabırğası və bel əti</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Dana Basdırma (200 qr)</span
+              ><span class="menu-item-price">12 ₼</span>
+            </div>
+            <p class="menu-item-desc">Dananın bel ətindən basdırma</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Çolpa Setkada (500 qr)</span
+              ><span class="menu-item-price">17 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Bütöv kənd çolpası, xüsusi ədviyyatlarla
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Quzu Səbəti (bütöv)</span
+              ><span class="menu-item-price">180 ₼</span>
+            </div>
+            <p class="menu-item-desc">Bütün quzu kababı seti</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Asatrin Kababı</span
+              ><span class="menu-item-price">28 ₼</span>
+            </div>
+            <p class="menu-item-desc"></p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Forel Setkada (500 qr)</span
+              ><span class="menu-item-price">16 ₼</span>
+            </div>
+            <p class="menu-item-desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIZZA -->
+      <div class="menu-panel" id="panel-pizza">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Margherita</span
+              ><span class="menu-item-price">11 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Pizza xəmiri, pizza sousu, mozzarella, pomidor
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Pollo Funghi</span
+              ><span class="menu-item-price">13 ₼</span>
+            </div>
+            <p class="menu-item-desc">Toyuq filé, göbələk, mozzarella</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Mexican Pizza</span
+              ><span class="menu-item-price">15 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Can əti, qırmızı lobya, jalapeno, rəngli bibər, mozzarella
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">French Pizza</span
+              ><span class="menu-item-price">16 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Tuna, qırmızı soğan, qara zeytun, rəngli bibər, şirin qarğıdalı
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Salami Pizza</span
+              ><span class="menu-item-price">13 ₼</span>
+            </div>
+            <p class="menu-item-desc">Salami, mozzarella</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Sezar Pizza</span
+              ><span class="menu-item-price">15 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              İceberg, çeri pomidor, sezar sousu, parmezan
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Qarışıq Pizza</span
+              ><span class="menu-item-price">16 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Pomidor, göbələk, rəngli bibər, qara zeytun, şirin qarğıdalı,
+              toyuq, salami
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-panel" id="panel-drinks">
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Samovar Çayı Dəstgah</span
+              ><span class="menu-item-price">45 ₼</span>
+            </div>
+            <p class="menu-item-desc">Samovar çay seti</p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Samovar Çayı Sadə</span
+              ><span class="menu-item-price">15 ₼</span>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Americano / Espresso</span
+              ><span class="menu-item-price">5-7 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Americano, Espresso single/double, Art Latte, Cappucino, Ice Latte
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Təzəsıxılmış Şirə</span
+              ><span class="menu-item-price">6-20 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Portağal, alma, nar, mix, ananas, qrafin fresh
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Ev Limonadı (Qrafin)</span
+              ><span class="menu-item-price">10 ₼</span>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Milkshake / Kokteyllər</span
+              ><span class="menu-item-price">8-12 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Milkshake, Mojito, Long Island, Blue Hawaii
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Pivə</span
+              ><span class="menu-item-price">5-9 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Efes, Heineken, Miller, Erdinger, Corona
+            </p>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-top">
+              <span class="menu-item-name">Şərab</span
+              ><span class="menu-item-price">15-45 ₼</span>
+            </div>
+            <p class="menu-item-desc">
+              Savalan, Savalan Premium, Yeddi Gözəl, Sevgilim, Meysəri
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-pdf-bar reveal">
+        <p data-i18n="pdf_note">
+          Tam menyunu PDF formatında yükləyə bilərsiniz
+        </p>
+        <a href="assets/menu.pdf" class="btn-gold" download data-i18n="pdf_btn"
+          >PDF Menyu Yüklə ↓</a
+        >
+      </div>
+    </section>
+    <!-- RESERVATION -->
+    <section id="reservation">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="res_tag">Masa Sifarişi</span>
+        <h2 class="section-title" data-i18n="res_title">
+          Yerinizi <em>ayırd edin</em>
+        </h2>
+        <div class="section-divider"></div>
+        <p class="section-desc" data-i18n="res_desc">
+          Formu doldurun, WhatsApp vasitəsilə birbaşa sifarişinizi göndərin.
+        </p>
+      </div>
+
+      <form class="reservation-form reveal" onsubmit="sendWhatsApp(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form_name">Ad</label>
+            <input type="text" id="fname" placeholder="Adınız" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_surname">Soyad</label>
+            <input type="text" id="lname" placeholder="Soyadınız" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form_phone">Telefon</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+994 XX XXX XX XX"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_guests">Qonaq Sayı</label>
+            <select id="guests">
+              <option value="1">1 nəfər</option>
+              <option value="2" selected>2 nəfər</option>
+              <option value="3">3 nəfər</option>
+              <option value="4">4 nəfər</option>
+              <option value="5">5 nəfər</option>
+              <option value="6">6 nəfər</option>
+              <option value="7">7 nəfər</option>
+              <option value="8">8+ nəfər</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form_date">Tarix</label>
+            <input type="date" id="rdate" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_time">Saat</label>
+            <select id="rtime">
+              <option>10:00</option>
+              <option>10:30</option>
+              <option>11:00</option>
+              <option>11:30</option>
+              <option>12:00</option>
+              <option>12:30</option>
+              <option>13:00</option>
+              <option>13:30</option>
+              <option>14:00</option>
+              <option>14:30</option>
+              <option>15:00</option>
+              <option>15:30</option>
+              <option>16:00</option>
+              <option>16:30</option>
+              <option>17:00</option>
+              <option>17:30</option>
+              <option>18:00</option>
+              <option>18:30</option>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+              <option>21:30</option>
+              <option>22:00</option>
+              <option>22:30</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group form-full">
+            <label data-i18n="form_note">Əlavə Qeyd</label>
+            <textarea
+              id="rnote"
+              placeholder="Xüsusi istəkləriniz, məkan seçimi..."
+            ></textarea>
+          </div>
+        </div>
+        <p class="form-note" data-i18n="form_whatsapp_note">
+          * Rezervasiya WhatsApp vasitəsilə birbaşa göndəriləcək
+        </p>
+        <button type="submit" class="form-submit">
+          <span class="whatsapp-icon"></span>
+          <span data-i18n="form_send">WhatsApp ilə Göndər</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/images/logo.jpg" alt="La Château" />
+          </div>
+          <p class="footer-about" data-i18n="footer_about">
+            La Château — Xəzər dənizinin sahilindəki premium restoran kompleksi.
+            Hər anınızı unutulmaz etmək üçün buradayıq.
+          </p>
+          <div class="footer-social">
+            <a
+              href="https://instagram.com/lachateaurestaurant"
+              target="_blank"
+              class="social-link"
+              title="Instagram"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/994553779817"
+              target="_blank"
+              class="social-link"
+              title="WhatsApp"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+              </svg>
+            </a>
+            <a href="tel:+994553779817" class="social-link" title="Zəng et">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_contact">Əlaqə</h4>
+          <ul class="footer-list">
+            <li>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <a href="tel:+994553779817">+994 55 377 98 17</a>
+            </li>
+            <li>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+              </svg>
+              <a
+                href="https://instagram.com/lachateaurestaurant"
+                target="_blank"
+                >@lachateaurestaurant</a
+              >
+            </li>
+            <li>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Corat Sahil küçəsi 85, Novxanı, Bakı</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title" data-i18n="footer_hours">İş Saatları</h4>
+          <ul class="footer-list footer-hours">
+            <li>
+              <span data-i18n="days_all">Hər gün</span> —
+              <span>10:00 – 23:00</span>
+            </li>
+          </ul>
+          <br />
+          <h4 class="footer-col-title" data-i18n="footer_spaces_title">
+            Məkanlar
+          </h4>
+          <ul class="footer-list">
+            <li data-i18n="footer_main">🏛️ Əsas Zal</li>
+            <li data-i18n="footer_vip">👑 VIP Kabinlər</li>
+            <li data-i18n="footer_cinema">🎬 Cinema Zalı</li>
+            <li data-i18n="footer_sea">🌊 Dəniz Kənarı</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 La Château Restaurant. Bütün hüquqlar qorunur.</span
+        >
+        <span class="footer-service-note" data-i18n="footer_service"
+          >⚠ 10% servis haqqı hesabınıza əlavə olunacaq</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      /* ============================================================
+   CURSOR
+   ============================================================ */
+      const dot = document.getElementById("cursorDot");
+      const ring = document.getElementById("cursorRing");
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+      });
+
+      (function animCursor() {
+        dot.style.left = mx + "px";
+        dot.style.top = my + "px";
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(animCursor);
+      })();
+
+      document
+        .querySelectorAll("a, button, .space-thumb, .menu-tab")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => ring.classList.add("hover"));
+          el.addEventListener("mouseleave", () =>
+            ring.classList.remove("hover"),
+          );
+        });
+
+      /* ============================================================
+   NAV SCROLL
+   ============================================================ */
+      const nav = document.getElementById("mainNav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 60);
+      });
+
+      /* ============================================================
+   MOBILE MENU
+   ============================================================ */
+      function toggleMobile() {
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+
+      /* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              // Staggered children
+              e.target.querySelectorAll(".menu-item").forEach((item, i) => {
+                item.style.transitionDelay = i * 0.04 + "s";
+                item.style.opacity = "1";
+                item.style.transform = "none";
+              });
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".reveal, .reveal-left, .reveal-right")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      /* ============================================================
+   MENU TABS
+   ============================================================ */
+      function showTab(id) {
+        document
+          .querySelectorAll(".menu-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".menu-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document.getElementById("panel-" + id).classList.add("active");
+        event.target.classList.add("active");
+      }
+
+      /* ============================================================
+   GALLERY IMAGES DATA
+   ============================================================ */
+      const galleries = {
+        main: [
+          "assets/images/zal-main.jpg",
+          "assets/images/zal-main1.jpg",
+          "assets/images/zal-1.jpg",
+          "assets/images/zal-table.jpg",
+          "assets/images/under-coridor.jpg",
+        ],
+        vip: [
+          "assets/images/cinema-1.jpg",
+          "assets/images/cinema-2.jpg",
+          "assets/images/cinema-3.jpg",
+          "assets/images/cinema-4.jpg",
+          "assets/images/cinema-5.jpg",
+          "assets/images/cinema-6.jpg",
+          "assets/images/cinema-7.jpg",
+          "assets/images/vipcab.jpg",
+        ],
+        cinema: [
+          "assets/images/cinema-place1.jpg",
+          "assets/images/cinema-place2.jpg",
+          "assets/images/cinema-hall.jpg",
+          "assets/images/cinema-hall1l.jpg",
+        ],
+        sea: [
+          "assets/images/deniz-kenar.jpg",
+          "assets/images/deniz-kenar1.jpg",
+          "assets/images/meal-fish.jpg",
+          "assets/images/drink-melon.jpg",
+        ],
+      };
+      let currentGallery = [],
+        currentIndex = 0;
+
+      function openGallery(name, idx = 0) {
+        currentGallery = galleries[name];
+        currentIndex = idx;
+        document.getElementById("lightboxImg").src =
+          currentGallery[currentIndex];
+        document.getElementById("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      function lbNext() {
+        currentIndex = (currentIndex + 1) % currentGallery.length;
+        document.getElementById("lightboxImg").src =
+          currentGallery[currentIndex];
+      }
+      function lbPrev() {
+        currentIndex =
+          (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+        document.getElementById("lightboxImg").src =
+          currentGallery[currentIndex];
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") lbNext();
+        if (e.key === "ArrowLeft") lbPrev();
+      });
+
+      /* ============================================================
+   WHATSAPP RESERVATION
+   ============================================================ */
+      function sendWhatsApp(e) {
+        e.preventDefault();
+        const fname = document.getElementById("fname").value;
+        const lname = document.getElementById("lname").value;
+        const phone = document.getElementById("phone").value;
+        const guests = document.getElementById("guests").value;
+        const date = document.getElementById("rdate").value;
+        const time = document.getElementById("rtime").value;
+        const note = document.getElementById("rnote").value;
+
+        // Format date
+        const d = date
+          ? new Date(date).toLocaleDateString("az-AZ", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+            })
+          : "";
+
+        const msg = `🏰 *La Château — Rezervasiya*
+
+👤 *Ad Soyad:* ${fname} ${lname}
+📞 *Telefon:* ${phone}
+👥 *Qonaq sayı:* ${guests} nəfər
+📅 *Tarix:* ${d}
+🕐 *Saat:* ${time}
+${note ? `📝 *Qeyd:* ${note}` : ""}
+
+_Bu mesaj La Château saytından avtomatik göndərilmişdir._`;
+
+        const url = `https://wa.me/994553779817?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+      }
+
+      /* ============================================================
+   I18N
+   ============================================================ */
+      const i18n = {
+        az: {
+          nav_about: "Haqqımızda",
+          nav_spaces: "Məkanlar",
+          nav_menu: "Menyu",
+          nav_reserve: "Rezervasiya",
+          nav_contact: "Əlaqə",
+          hero_tag: "Novxanı, Azərbaycan — Xəzər Sahili",
+          hero_sub: "Restaurant & Private Rooms",
+          hero_btn1: "Masa Sifariş Et",
+          hero_btn2: "Məkanları Kəşf Et",
+          scroll: "Aşağı Sürüşdür",
+          about_tag: "Bizim haqqımızda",
+          about_title: "Hər an xatirəyə\nçevrilsin",
+          about_p1:
+            "La Château — Xəzər dənizinin sahilində, Novxanıda yerləşən premium restoran kompleksidir. Milli və dünya mətbəxinin ən gözəl nümunələrini bir çatı altında birləşdiririk.",
+          about_p2:
+            "Özəl VIP kabinlər, sinema zalı, açıq dəniz kənarı məkanı — hər detal sizin üçün düşünülmüş, hər an unutulmaz olmaq üçün hazırlanmışdır.",
+          stat1: "Unikal Məkan",
+          stat2: "Menyu Mövqeyi",
+          stat3: "Xatirə",
+          spaces_tag: "Məkanlarımız",
+          spaces_title: "Hər məkan ayrı bir dünya",
+          spaces_desc:
+            "Əsas zal, VIP kabinlər, sinema zalı və Xəzər sahilindəki açıq məkan — seçim sizindir.",
+          main_tag: "Əsas Restoran Zalı",
+          main_title: "Əsas Zal",
+          main_desc:
+            "Edison lampalar, geniş panoram pəncərələr və Xəzər mənzərəsi.",
+          vip_tag: "Özəl Məkanlar",
+          vip_title: "VIP Kabinlər",
+          vip_desc: "Hər otaq öz xarakteri ilə — mavi, qırmızı, yaşıl, qızılı.",
+          cinema_tag: "Sinema & Yemək",
+          cinema_title: "Cinema Zalı",
+          cinema_desc:
+            "Premium recliner oturacaqlar, böyük ekran, mükəmməl səs sistemi.",
+          sea_tag: "Xəzər Sahili",
+          sea_title: "Dəniz Kənarı",
+          sea_desc: "Ağ vitray çərçivələr, qırmızı güllər, dəniz küləyi.",
+          view_gallery: "Qalereya →",
+          menu_tag: "Bizim Menyu",
+          menu_title: "Dadların simfoniyası",
+          menu_desc:
+            "Milli mətbəxdən dünya mətbəxinə, Xəzər balıqlarından premium steaklərə.",
+          tab_breakfast: "Səhər Yeməyi",
+          tab_cold: "Soyuq Qəlyanaltı",
+          tab_hot: "İsti Qəlyanaltı",
+          tab_soups: "Şorbalar",
+          tab_salads: "Salatlar",
+          tab_national: "Milli Mətbəx",
+          tab_chef: "Şef Menyu",
+          tab_world: "Dünya Mətbəxi",
+          tab_steak: "Steak",
+          tab_seafood: "Dəniz Məhsulları",
+          tab_bbq: "Mangal Kabablar",
+          tab_pizza: "Pizza",
+          tab_drinks: "İçkilər",
+          pdf_note: "Tam menyunu PDF formatında yükləyə bilərsiniz",
+          pdf_btn: "PDF Menyu Yüklə ↓",
+          res_tag: "Masa Sifarişi",
+          res_title: "Yerinizi ayırd edin",
+          res_desc:
+            "Formu doldurun, WhatsApp vasitəsilə birbaşa sifarişinizi göndərin.",
+          form_name: "Ad",
+          form_surname: "Soyad",
+          form_phone: "Telefon",
+          form_guests: "Qonaq Sayı",
+          form_date: "Tarix",
+          form_time: "Saat",
+          form_note: "Əlavə Qeyd",
+          form_whatsapp_note:
+            "* Rezervasiya WhatsApp vasitəsilə birbaşa göndəriləcək",
+          form_send: "WhatsApp ilə Göndər",
+          footer_about:
+            "La Château — Xəzər dənizinin sahilindəki premium restoran kompleksi.",
+          footer_contact: "Əlaqə",
+          footer_hours: "İş Saatları",
+          footer_spaces_title: "Məkanlar",
+          footer_main: "🏛️ Əsas Zal",
+          footer_vip: "👑 VIP Kabinlər",
+          footer_cinema: "🎬 Cinema Zalı",
+          footer_sea: "🌊 Dəniz Kənarı",
+          days_all: "Hər gün",
+          footer_service: "⚠ 10% servis haqqı hesabınıza əlavə olunacaq",
+        },
+        ru: {
+          nav_about: "О нас",
+          nav_spaces: "Залы",
+          nav_menu: "Меню",
+          nav_reserve: "Резервация",
+          nav_contact: "Контакт",
+          hero_tag: "Новханы, Азербайджан — Берег Каспия",
+          hero_sub: "Ресторан & Приватные комнаты",
+          hero_btn1: "Забронировать стол",
+          hero_btn2: "Посмотреть залы",
+          scroll: "Прокрутите вниз",
+          about_tag: "О нас",
+          about_title: "Каждый момент\nстанет воспоминанием",
+          about_p1:
+            "La Château — премиальный ресторанный комплекс на берегу Каспийского моря в Новханы.",
+          about_p2:
+            "Приватные VIP-кабинеты, зал кинотеатра, открытая терраса у моря — каждая деталь продумана для вас.",
+          stat1: "Уникальных зала",
+          stat2: "Позиций меню",
+          stat3: "Воспоминаний",
+          spaces_tag: "Наши залы",
+          spaces_title: "Каждый зал — отдельный мир",
+          spaces_desc:
+            "Главный зал, VIP-кабинеты, кинозал и открытая терраса — выбор за вами.",
+          main_tag: "Главный зал",
+          main_title: "Главный Зал",
+          main_desc: "Лампы Эдисона, панорамные окна и вид на Каспийское море.",
+          vip_tag: "Приватные пространства",
+          vip_title: "VIP Кабинеты",
+          vip_desc:
+            "Каждый кабинет со своим характером — синий, красный, зелёный, золотой.",
+          cinema_tag: "Кинотеатр & Ужин",
+          cinema_title: "Кинозал",
+          cinema_desc:
+            "Премиальные кресла-реклайнеры, большой экран, отличная акустика.",
+          sea_tag: "Берег Каспия",
+          sea_title: "У моря",
+          sea_desc: "Белые перголы, красные розы, морской бриз.",
+          view_gallery: "Галерея →",
+          menu_tag: "Наше меню",
+          menu_title: "Симфония вкусов",
+          menu_desc:
+            "От национальной кухни до мировой, от рыбы Каспия до премиальных стейков.",
+          tab_breakfast: "Завтрак",
+          tab_cold: "Холодные закуски",
+          tab_hot: "Горячие закуски",
+          tab_soups: "Супы",
+          tab_salads: "Салаты",
+          tab_national: "Национальная кухня",
+          tab_chef: "Меню шефа",
+          tab_world: "Мировая кухня",
+          tab_steak: "Стейк",
+          tab_seafood: "Морепродукты",
+          tab_bbq: "Шашлыки",
+          tab_pizza: "Пицца",
+          tab_drinks: "Напитки",
+          pdf_note: "Вы можете скачать полное меню в формате PDF",
+          pdf_btn: "Скачать PDF меню ↓",
+          res_tag: "Резервация",
+          res_title: "Забронируйте место",
+          res_desc:
+            "Заполните форму и отправьте заявку напрямую через WhatsApp.",
+          form_name: "Имя",
+          form_surname: "Фамилия",
+          form_phone: "Телефон",
+          form_guests: "Кол-во гостей",
+          form_date: "Дата",
+          form_time: "Время",
+          form_note: "Дополнительно",
+          form_whatsapp_note:
+            "* Бронирование будет отправлено напрямую через WhatsApp",
+          form_send: "Отправить через WhatsApp",
+          footer_about:
+            "La Château — премиальный ресторанный комплекс на берегу Каспия.",
+          footer_contact: "Контакт",
+          footer_hours: "Часы работы",
+          footer_spaces_title: "Залы",
+          footer_main: "🏛️ Главный зал",
+          footer_vip: "👑 VIP кабинеты",
+          footer_cinema: "🎬 Кинозал",
+          footer_sea: "🌊 У моря",
+          days_all: "Каждый день",
+          footer_service: "⚠ К счёту добавляется 10% за обслуживание",
+        },
+        en: {
+          nav_about: "About",
+          nav_spaces: "Spaces",
+          nav_menu: "Menu",
+          nav_reserve: "Reserve",
+          nav_contact: "Contact",
+          hero_tag: "Novkhani, Azerbaijan — Caspian Shore",
+          hero_sub: "Restaurant & Private Rooms",
+          hero_btn1: "Book a Table",
+          hero_btn2: "Explore Spaces",
+          scroll: "Scroll Down",
+          about_tag: "About Us",
+          about_title: "Every moment\nbecome a memory",
+          about_p1:
+            "La Château is a premium restaurant complex on the shores of the Caspian Sea in Novkhani.",
+          about_p2:
+            "Private VIP rooms, a cinema hall, an open seaside terrace — every detail designed for you.",
+          stat1: "Unique Spaces",
+          stat2: "Menu Items",
+          stat3: "Memories",
+          spaces_tag: "Our Spaces",
+          spaces_title: "Every space is its own world",
+          spaces_desc:
+            "Main hall, VIP rooms, cinema hall and open seaside terrace — the choice is yours.",
+          main_tag: "Main Dining Hall",
+          main_title: "Main Hall",
+          main_desc: "Edison bulbs, panoramic windows and Caspian Sea views.",
+          vip_tag: "Private Spaces",
+          vip_title: "VIP Rooms",
+          vip_desc:
+            "Each room with its own character — blue, red, green, gold.",
+          cinema_tag: "Cinema & Dining",
+          cinema_title: "Cinema Hall",
+          cinema_desc:
+            "Premium recliner seats, large screen, exceptional sound.",
+          sea_tag: "Caspian Shore",
+          sea_title: "By the Sea",
+          sea_desc: "White pergolas, red roses, sea breeze.",
+          view_gallery: "Gallery →",
+          menu_tag: "Our Menu",
+          menu_title: "A symphony of flavors",
+          menu_desc:
+            "From national cuisine to world cuisine, from Caspian fish to premium steaks.",
+          tab_breakfast: "Breakfast",
+          tab_cold: "Cold Appetizers",
+          tab_hot: "Hot Appetizers",
+          tab_soups: "Soups",
+          tab_salads: "Salads",
+          tab_national: "National Cuisine",
+          tab_chef: "Chef's Menu",
+          tab_world: "World Cuisine",
+          tab_steak: "Steak",
+          tab_seafood: "Seafood",
+          tab_bbq: "BBQ",
+          tab_pizza: "Pizza",
+          tab_drinks: "Drinks",
+          pdf_note: "Download the full menu in PDF format",
+          pdf_btn: "Download PDF Menu ↓",
+          res_tag: "Reservation",
+          res_title: "Reserve your table",
+          res_desc:
+            "Fill the form and send your reservation directly via WhatsApp.",
+          form_name: "First Name",
+          form_surname: "Last Name",
+          form_phone: "Phone",
+          form_guests: "Guests",
+          form_date: "Date",
+          form_time: "Time",
+          form_note: "Notes",
+          form_whatsapp_note:
+            "* Reservation will be sent directly via WhatsApp",
+          form_send: "Send via WhatsApp",
+          footer_about:
+            "La Château — a premium restaurant complex on the Caspian shore.",
+          footer_contact: "Contact",
+          footer_hours: "Working Hours",
+          footer_spaces_title: "Spaces",
+          footer_main: "🏛️ Main Hall",
+          footer_vip: "👑 VIP Rooms",
+          footer_cinema: "🎬 Cinema Hall",
+          footer_sea: "🌊 By the Sea",
+          days_all: "Every day",
+          footer_service: "⚠ 10% service charge will be added to your bill",
+        },
+      };
+
+      let currentLang = "az";
+
+      function setLang(lang) {
+        currentLang = lang;
+        document.querySelectorAll(".lang-btn").forEach((b) => {
+          b.classList.toggle("active", b.textContent.toLowerCase() === lang);
+        });
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (i18n[lang] && i18n[lang][key]) {
+            el.textContent = i18n[lang][key];
+          }
+        });
+        document.documentElement.lang = lang;
+      }
+
+      // Set today as min date for reservation
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("rdate").setAttribute("min", today);
+      document.getElementById("rdate").value = today;
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
