@@ -1166,7 +1166,4 @@ footer {
   .about-stats {
     grid-template-columns: 1fr;
   }
-  .lang-switcher {
-    display: none;
-  }
 }
