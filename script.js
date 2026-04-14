@@ -450,7 +450,6 @@ function setLang(lang) {
       el.textContent = i18n[lang][key];
     }
   });
-  document.documentElement.lang = lang;
    function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll(".lang-btn").forEach((b) => {
@@ -474,7 +473,6 @@ function setLang(lang) {
   document.getElementById('lname').placeholder = placeholders[lang].lname;
   document.getElementById('phone').placeholder = placeholders[lang].phone;
   document.getElementById('rnote').placeholder = placeholders[lang].note;
-}
 }
 
 // Set today as min date for reservation
